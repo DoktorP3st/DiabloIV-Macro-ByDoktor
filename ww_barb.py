@@ -271,7 +271,7 @@ class Settings:
         self.win.configure(bg="#0c0c14")
         self.win.attributes("-topmost", True)
         self.win.resizable(False, False)
-        self.win.geometry("620x740")
+        self.win.geometry("620x800")
         self._build()
 
     def _lbl(self, p, t, **kw):
@@ -386,7 +386,7 @@ class Settings:
 
         # Tableau skills — grid layout
         sf = tk.Frame(self.win, bg="#0c0c14")
-        sf.pack(fill="x", padx=12, pady=(8,0))
+        sf.pack(fill="x", padx=12, pady=(8,12))
         sf.columnconfigure(1, weight=1, minsize=130)
 
         headers = [
