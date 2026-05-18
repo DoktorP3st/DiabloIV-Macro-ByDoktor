@@ -37,22 +37,13 @@ Displays Xbox-style controller buttons with live cooldown bars, handles Whirlwin
 
 ## 📸 Preview
 
-```
-┌─────────────────────────────────────────┐
-│ ⚔  WW BARB                    ●  ON  ⚙ ✕│
-├──────────────────────────────────────────┤
-│ [A]  Whirlwind   [════════════] TOURNE···│
-│ [Q]  Potion      [██████████░░]  2.4s    │
-├──────────────────────────────────────────┤
-│ [X]  Iron Skin   [████████████]  PRÊT    │
-│ [Y]  Rallying    [████░░░░░░░░]  3.1s    │
-│ [RB] War Cry     [████████████]  PRÊT    │
-│ [LT] Chall. Shout[██░░░░░░░░░░] 18.7s   │
-│ [RT] Call Ancients[░░░░░░░░░░░] 44.2s   │
-├──────────────────────────────────────────┤
-│ ⚔ ACTIF — 3m47s                         │
-└──────────────────────────────────────────┘
-```
+<div align="center">
+
+| Overlay (actif) | Réglages |
+|:-:|:-:|
+| ![Overlay](https://i.imgur.com/NgYpzbx.png) | ![Settings](https://i.imgur.com/DDerGvT.png) |
+
+</div>
 
 ---
 
