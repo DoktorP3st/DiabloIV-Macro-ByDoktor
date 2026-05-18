@@ -1,0 +1,42 @@
+{
+  "lang_name": "Español",
+  "overlay": {
+    "status_off":      "OFF",
+    "status_on":       " ON",
+    "footer_idle":     "Modo hardware · {key} = alternar",
+    "footer_active":   "⚔ ACTIVO — {m}m{s:02d}s",
+    "ww_label":        "Torbellino",
+    "ww_spinning":     "GIRA",
+    "ww_stop":         " STOP",
+    "pot_label":       "Poción",
+    "pot_ready":       "LISTO",
+    "skill_ready":     "LISTO ",
+    "inactive":        "  —  "
+  },
+  "settings": {
+    "title":           "⚙  CONFIGURACIÓN",
+    "lang_label":      "Idioma:",
+    "toggle_key":      "Tecla ON/OFF:",
+    "press_dur":       "Duración pulsación (ms):",
+    "ww_section":      "🌀  TORBELLINO AUTO-HOLD",
+    "ww_enable":       "Activar hold automático",
+    "ww_ctrl":         "Botón mando:",
+    "ww_key":          "Tecla secundaria D4:",
+    "ww_interval":     "Intervalo bucle (ms):",
+    "ww_jitter":       "± 12ms jitter auto",
+    "ww_hint":         "⚠  Añade la tecla en D4 → Ajustes → Controles → Teclado → Torbellino",
+    "pot_section":     "🧪  POCIÓN AUTOMÁTICA",
+    "pot_enable":      "Activar poción auto",
+    "pot_key":         "Tecla:",
+    "pot_interval":    "Cada (s):",
+    "col_order":       "↕",
+    "col_skill":       "Skill",
+    "col_ctrl":        "Ctrl",
+    "col_key":         "Tecla",
+    "col_cd":          "CD(s)",
+    "col_on":          "ON",
+    "btn_save":        "✓  GUARDAR",
+    "btn_cancel":      "✕  CANCELAR",
+    "err_title":       "Error"
+  }
+}

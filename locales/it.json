@@ -1,0 +1,42 @@
+{
+  "lang_name": "Italiano",
+  "overlay": {
+    "status_off":      "OFF",
+    "status_on":       " ON",
+    "footer_idle":     "Modalità hardware · {key} = toggle",
+    "footer_active":   "⚔ ATTIVO — {m}m{s:02d}s",
+    "ww_label":        "Turbine",
+    "ww_spinning":     "GIRA",
+    "ww_stop":         " STOP",
+    "pot_label":       "Pozione",
+    "pot_ready":       "PRONTO",
+    "skill_ready":     "PRONTO",
+    "inactive":        "  —  "
+  },
+  "settings": {
+    "title":           "⚙  CONFIGURAZIONE",
+    "lang_label":      "Lingua:",
+    "toggle_key":      "Tasto ON/OFF:",
+    "press_dur":       "Durata pressione (ms):",
+    "ww_section":      "🌀  TURBINE AUTO-HOLD",
+    "ww_enable":       "Attiva hold automatico",
+    "ww_ctrl":         "Pulsante controller:",
+    "ww_key":          "Tasto secondario D4:",
+    "ww_interval":     "Intervallo ciclo (ms):",
+    "ww_jitter":       "± 12ms jitter auto",
+    "ww_hint":         "⚠  Aggiungi il tasto in D4 → Impostazioni → Controlli → Tastiera → Turbine",
+    "pot_section":     "🧪  POZIONE AUTOMATICA",
+    "pot_enable":      "Attiva pozione auto",
+    "pot_key":         "Tasto:",
+    "pot_interval":    "Ogni (s):",
+    "col_order":       "↕",
+    "col_skill":       "Skill",
+    "col_ctrl":        "Ctrl",
+    "col_key":         "Tasto",
+    "col_cd":          "CD(s)",
+    "col_on":          "ON",
+    "btn_save":        "✓  SALVA",
+    "btn_cancel":      "✕  ANNULLA",
+    "err_title":       "Errore"
+  }
+}

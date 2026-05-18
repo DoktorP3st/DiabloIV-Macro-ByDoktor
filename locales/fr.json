@@ -1,0 +1,42 @@
+{
+  "lang_name": "Français",
+  "overlay": {
+    "status_off":      "OFF",
+    "status_on":       " ON",
+    "footer_idle":     "Hardware mode · {key} = toggle",
+    "footer_active":   "⚔ ACTIF — {m}m{s:02d}s",
+    "ww_label":        "Whirlwind",
+    "ww_spinning":     "TOURNE",
+    "ww_stop":         " STOP",
+    "pot_label":       "Potion",
+    "pot_ready":       " PRÊT",
+    "skill_ready":     " PRÊT ",
+    "inactive":        "  —  "
+  },
+  "settings": {
+    "title":           "⚙  CONFIGURATION",
+    "lang_label":      "Langue :",
+    "toggle_key":      "Touche ON/OFF :",
+    "press_dur":       "Durée frappe (ms) :",
+    "ww_section":      "🌀  WHIRLWIND AUTO-HOLD",
+    "ww_enable":       "Activer le hold automatique",
+    "ww_ctrl":         "Bouton manette :",
+    "ww_key":          "Touche clavier secondaire D4 :",
+    "ww_interval":     "Intervalle boucle (ms) :",
+    "ww_jitter":       "± 12ms jitter auto",
+    "ww_hint":         "⚠  Ajoute la touche dans D4 → Paramètres → Contrôles → Clavier → Whirlwind",
+    "pot_section":     "🧪  POTION AUTOMATIQUE",
+    "pot_enable":      "Activer la potion auto",
+    "pot_key":         "Touche :",
+    "pot_interval":    "Toutes les (s) :",
+    "col_order":       "↕",
+    "col_skill":       "Skill",
+    "col_ctrl":        "Ctrl",
+    "col_key":         "Clavier",
+    "col_cd":          "CD(s)",
+    "col_on":          "ON",
+    "btn_save":        "✓  SAUVEGARDER",
+    "btn_cancel":      "✕  ANNULER",
+    "err_title":       "Erreur"
+  }
+}

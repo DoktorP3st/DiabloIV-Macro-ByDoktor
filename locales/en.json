@@ -1,0 +1,42 @@
+{
+  "lang_name": "English",
+  "overlay": {
+    "status_off":      "OFF",
+    "status_on":       " ON",
+    "footer_idle":     "Hardware mode · {key} = toggle",
+    "footer_active":   "⚔ ACTIVE — {m}m{s:02d}s",
+    "ww_label":        "Whirlwind",
+    "ww_spinning":     "SPIN",
+    "ww_stop":         " STOP",
+    "pot_label":       "Potion",
+    "pot_ready":       "READY",
+    "skill_ready":     "READY ",
+    "inactive":        "  —  "
+  },
+  "settings": {
+    "title":           "⚙  CONFIGURATION",
+    "lang_label":      "Language:",
+    "toggle_key":      "Toggle key:",
+    "press_dur":       "Press duration (ms):",
+    "ww_section":      "🌀  WHIRLWIND AUTO-HOLD",
+    "ww_enable":       "Enable auto hold",
+    "ww_ctrl":         "Controller button:",
+    "ww_key":          "D4 secondary keyboard key:",
+    "ww_interval":     "Loop interval (ms):",
+    "ww_jitter":       "± 12ms auto jitter",
+    "ww_hint":         "⚠  Add key in D4 → Settings → Controls → Keyboard → Whirlwind",
+    "pot_section":     "🧪  AUTO POTION",
+    "pot_enable":      "Enable auto potion",
+    "pot_key":         "Key:",
+    "pot_interval":    "Every (s):",
+    "col_order":       "↕",
+    "col_skill":       "Skill",
+    "col_ctrl":        "Ctrl",
+    "col_key":         "Key",
+    "col_cd":          "CD(s)",
+    "col_on":          "ON",
+    "btn_save":        "✓  SAVE",
+    "btn_cancel":      "✕  CANCEL",
+    "err_title":       "Error"
+  }
+}

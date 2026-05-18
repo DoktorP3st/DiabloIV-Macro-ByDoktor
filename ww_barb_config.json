@@ -1,0 +1,70 @@
+{
+  "lang": "fr",
+  "toggle_key": "F1",
+  "press_duration_ms": 120,
+  "press_gap_ms": 60,
+  "skills": [
+    {
+      "name": "Iron Skin",
+      "vk": 54,
+      "key_label": "6",
+      "ctrl_label": "X",
+      "cd": 14.0,
+      "color": "#3b82f6",
+      "enabled": true
+    },
+    {
+      "name": "Rallying Cry",
+      "vk": 49,
+      "key_label": "1",
+      "ctrl_label": "Y",
+      "cd": 5.1,
+      "color": "#f59e0b",
+      "enabled": true
+    },
+    {
+      "name": "War Cry",
+      "vk": 52,
+      "key_label": "4",
+      "ctrl_label": "RB",
+      "cd": 25.0,
+      "color": "#ef4444",
+      "enabled": true
+    },
+    {
+      "name": "Chall. Shout",
+      "vk": 51,
+      "key_label": "3",
+      "ctrl_label": "LT",
+      "cd": 25.0,
+      "color": "#8b5cf6",
+      "enabled": true
+    },
+    {
+      "name": "Call Ancients",
+      "vk": 50,
+      "key_label": "2",
+      "ctrl_label": "RT",
+      "cd": 50.0,
+      "color": "#10b981",
+      "enabled": true
+    }
+  ],
+  "whirlwind_hold": {
+    "ctrl_label": "A",
+    "key_label": "5",
+    "vk": 53,
+    "ww_interval_ms": 80,
+    "enabled": false
+  },
+  "potion": {
+    "enabled": false,
+    "key_label": "Q",
+    "vk": 81,
+    "interval_s": 8.0
+  },
+  "overlay_pos": {
+    "x": 20,
+    "y": 200
+  }
+}

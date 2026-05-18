@@ -1,0 +1,42 @@
+{
+  "lang_name": "Deutsch",
+  "overlay": {
+    "status_off":      "AUS",
+    "status_on":       " AN",
+    "footer_idle":     "Hardware-Modus · {key} = umschalten",
+    "footer_active":   "⚔ AKTIV — {m}m{s:02d}s",
+    "ww_label":        "Wirbelwind",
+    "ww_spinning":     "DREHT",
+    "ww_stop":         " STOP",
+    "pot_label":       "Trank",
+    "pot_ready":       "BEREIT",
+    "skill_ready":     "BEREIT",
+    "inactive":        "  —  "
+  },
+  "settings": {
+    "title":           "⚙  EINSTELLUNGEN",
+    "lang_label":      "Sprache:",
+    "toggle_key":      "Umschalttaste:",
+    "press_dur":       "Druckdauer (ms):",
+    "ww_section":      "🌀  WIRBELWIND AUTO-HOLD",
+    "ww_enable":       "Auto-Hold aktivieren",
+    "ww_ctrl":         "Controller-Taste:",
+    "ww_key":          "Sekundäre D4 Tastaturtaste:",
+    "ww_interval":     "Schleifenintervall (ms):",
+    "ww_jitter":       "± 12ms Auto-Jitter",
+    "ww_hint":         "⚠  Taste in D4 hinzufügen → Einstellungen → Steuerung → Tastatur → Wirbelwind",
+    "pot_section":     "🧪  AUTO-TRANK",
+    "pot_enable":      "Auto-Trank aktivieren",
+    "pot_key":         "Taste:",
+    "pot_interval":    "Alle (s):",
+    "col_order":       "↕",
+    "col_skill":       "Skill",
+    "col_ctrl":        "Strg",
+    "col_key":         "Taste",
+    "col_cd":          "CD(s)",
+    "col_on":          "AN",
+    "btn_save":        "✓  SPEICHERN",
+    "btn_cancel":      "✕  ABBRECHEN",
+    "err_title":       "Fehler"
+  }
+}
