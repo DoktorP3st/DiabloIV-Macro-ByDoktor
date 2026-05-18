@@ -47,6 +47,7 @@ os.makedirs(CONFIG_DIR, exist_ok=True)
 
 DEFAULT_CONFIG = {
     "lang":             "fr",
+    "opacity":          0.92,
     "toggle_key":       "F1",
     "overlay_pos":      {"x": 20, "y": 200},
     "press_duration_ms": 120,       # durée de chaque frappe (ms)
@@ -271,7 +272,7 @@ class Settings:
         self.win.configure(bg="#0c0c14")
         self.win.attributes("-topmost", True)
         self.win.resizable(False, False)
-        self.win.geometry("620x800")
+        self.win.geometry("620x870")
         self._build()
 
     def _lbl(self, p, t, **kw):
@@ -312,6 +313,18 @@ class Settings:
         self._lbl(top, i18n.t("settings.press_dur")).pack(side="left", padx=(16,0))
         self.dv = tk.StringVar(value=str(self.cfg.get("press_duration_ms",120)))
         self._entry(top, self.dv, 5).pack(side="left", padx=4)
+
+        # Ligne opacité
+        op_row = tk.Frame(self.win, bg="#13131f", pady=4)
+        op_row.pack(fill="x", padx=12, pady=(0,8))
+        self._lbl(op_row, i18n.t("settings.opacity")).pack(side="left", padx=8)
+        self.opacity_var = tk.IntVar(value=int(self.cfg.get("opacity", 0.92) * 100))
+        tk.Scale(op_row, variable=self.opacity_var, from_=20, to=100,
+                 orient="horizontal", bg="#13131f", fg="#aaaaaa",
+                 troughcolor="#1a1a2e", activebackground="#3a3a5e",
+                 highlightthickness=0, length=160, showvalue=True,
+                 font=("Courier",8)
+                 ).pack(side="left", padx=4)
 
         # Section Whirlwind
         ww_frame = tk.Frame(self.win, bg="#1a2a1a", pady=8)
@@ -462,8 +475,9 @@ class Settings:
     def _read_form(self):
         """Lit les valeurs du formulaire dans self.cfg sans sauvegarder."""
         try:
-            self.cfg["lang"]             = self.lang_var.get()
-            self.cfg["toggle_key"]       = self.tv.get().strip()
+            self.cfg["lang"]              = self.lang_var.get()
+            self.cfg["opacity"]           = round(self.opacity_var.get() / 100.0, 2)
+            self.cfg["toggle_key"]        = self.tv.get().strip()
             self.cfg["press_duration_ms"] = int(self.dv.get())
 
             pot_kl = self.pot_key.get().strip().upper()
@@ -541,7 +555,7 @@ class App:
         self.root.title("WW Barb")
         self.root.overrideredirect(True)
         self.root.attributes("-topmost", True)
-        self.root.attributes("-alpha", 0.92)
+        self.root.attributes("-alpha", self.cfg.get("opacity", 0.92))
         self.root.geometry(f"{self.W}x{h}+{pos['x']}+{pos['y']}")
         self.root.configure(bg="#0c0c14")
 
@@ -569,12 +583,12 @@ class App:
 
         gear = tk.Label(hdr, text="⚙", font=("Courier",12),
                          fg="#445566", bg="#13131f", cursor="hand2")
-        gear.place(x=self.W-30, y=12)
+        gear.place(x=self.W-50, y=12)
         gear.bind("<Button-1>", lambda e: self._open_settings())
 
         close = tk.Label(hdr, text="✕", font=("Courier",10),
                           fg="#333355", bg="#13131f", cursor="hand2")
-        close.place(x=self.W-14, y=4)
+        close.place(x=self.W-22, y=13)
         close.bind("<Button-1>", lambda e: self._quit())
 
         for w in (hdr, self.root):
@@ -838,6 +852,7 @@ class App:
             self.cfg = cfg
             global _gap_ms
             _gap_ms  = cfg.get("press_gap_ms", 60)
+            self.root.attributes("-alpha", cfg.get("opacity", 0.92))
             self.engine.reload(cfg)
             self._rebuild()
 

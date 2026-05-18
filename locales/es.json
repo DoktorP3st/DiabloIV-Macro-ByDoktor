@@ -16,6 +16,7 @@
   "settings": {
     "title":           "⚙  CONFIGURACIÓN",
     "lang_label":      "Idioma:",
+    "opacity":         "Opacidad:",
     "toggle_key":      "Tecla ON/OFF:",
     "press_dur":       "Duración pulsación (ms):",
     "ww_section":      "🌀  TORBELLINO AUTO-HOLD",

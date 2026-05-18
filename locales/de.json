@@ -16,6 +16,7 @@
   "settings": {
     "title":           "⚙  EINSTELLUNGEN",
     "lang_label":      "Sprache:",
+    "opacity":         "Deckkraft:",
     "toggle_key":      "Umschalttaste:",
     "press_dur":       "Druckdauer (ms):",
     "ww_section":      "🌀  WIRBELWIND AUTO-HOLD",

@@ -16,6 +16,7 @@
   "settings": {
     "title":           "⚙  CONFIGURAZIONE",
     "lang_label":      "Lingua:",
+    "opacity":         "Opacità:",
     "toggle_key":      "Tasto ON/OFF:",
     "press_dur":       "Durata pressione (ms):",
     "ww_section":      "🌀  TURBINE AUTO-HOLD",

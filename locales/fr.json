@@ -16,6 +16,7 @@
   "settings": {
     "title":           "⚙  CONFIGURATION",
     "lang_label":      "Langue :",
+    "opacity":         "Opacité :",
     "toggle_key":      "Touche ON/OFF :",
     "press_dur":       "Durée frappe (ms) :",
     "ww_section":      "🌀  WHIRLWIND AUTO-HOLD",
