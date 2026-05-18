@@ -263,8 +263,9 @@ class Engine:
 # ── SETTINGS WINDOW ───────────────────────────────────────────────────────────
 class Settings:
     def __init__(self, parent, cfg, on_save):
-        self.cfg     = json.loads(json.dumps(cfg))
-        self.on_save = on_save
+        self.cfg      = json.loads(json.dumps(cfg))
+        self.on_save  = on_save
+        self.rows_v   = []
         self.win = tk.Toplevel(parent)
         self.win.title("⚙ Settings — WW Barb")
         self.win.configure(bg="#0c0c14")
@@ -298,6 +299,7 @@ class Settings:
                            activebackground="#13131f", activeforeground="#ffffff",
                            selectcolor="#1a1a2e", relief="flat"
                            ).pack(side="left", padx=(0,8))
+        self.lang_var.trace_add("write", self._reload_language)
 
         # Réglages globaux
         top = tk.Frame(self.win, bg="#13131f", pady=6)
@@ -453,16 +455,15 @@ class Settings:
         ni = idx + d
         if 0 <= ni < len(sk):
             sk[idx], sk[ni] = sk[ni], sk[idx]
+            self._read_form()
             self.win.destroy()
             Settings(None, self.cfg, self.on_save)
 
-    def _save(self):
+    def _read_form(self):
+        """Lit les valeurs du formulaire dans self.cfg sans sauvegarder."""
         try:
-            lang_code = self.lang_var.get()   # code direct : "fr", "en", etc.
-            self.cfg["lang"] = lang_code
-            i18n.load(lang_code)
-
-            self.cfg["toggle_key"] = self.tv.get().strip()
+            self.cfg["lang"]             = self.lang_var.get()
+            self.cfg["toggle_key"]       = self.tv.get().strip()
             self.cfg["press_duration_ms"] = int(self.dv.get())
 
             pot_kl = self.pot_key.get().strip().upper()
@@ -492,7 +493,25 @@ class Settings:
                     "cd":         float(cdv.get()),
                     "enabled":    env.get(),
                 })
+        except Exception:
+            pass  # champs partiellement remplis tolérés pendant le switch de langue
 
+    def _reload_language(self, *_):
+        """Appelé dès qu'un radio button langue change — recharge la fenêtre instantanément."""
+        new_code = self.lang_var.get()
+        if not new_code or new_code == i18n.current():
+            return
+        self._read_form()
+        i18n.load(new_code)
+        self.cfg["lang"] = new_code
+        for w in self.win.winfo_children():
+            w.destroy()
+        self.rows_v = []
+        self._build()
+
+    def _save(self):
+        try:
+            self._read_form()
             save_cfg(self.cfg)
             self.on_save(self.cfg)
             self.win.destroy()
