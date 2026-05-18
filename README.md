@@ -31,7 +31,7 @@ Displays Xbox-style controller buttons with live cooldown bars, handles Whirlwin
 | ⏱ | **Session timer** | Tracks how long the macro has been active |
 | 🌍 | **5 languages** | Français · English · Deutsch · Español · Italiano |
 | ⚙ | **In-app settings** | Full GUI — no config file editing needed |
-| 💾 | **Persistent config** | Position, keybinds, cooldowns saved automatically on exit |
+| 💾 | **Persistent config** | Saved in `%APPDATA%\DoktorP3st\config.json`, works on any PC |
 
 ---
 
@@ -74,10 +74,12 @@ cd DiabloIV-Macro-ByDoktor
 pip install pynput
 
 # 3. Launch
-python ww_barb_macro.py
+python ww_barb.py
 # — or double-click —
 launch.bat
 ```
+
+> Configuration is saved automatically to `%APPDATA%\DoktorP3st\config.json` — works on any Windows PC without needing to edit files.
 
 ---
 
@@ -117,7 +119,7 @@ Open with the **⚙** icon in the overlay.
 | Ctrl / Key | Controller button label + keyboard key per skill |
 | CD(s) | Cooldown in seconds — adjust to your actual in-game CDR |
 | **Auto Potion** | Fire potion key every N seconds |
-| Language | UI language (FR / EN / DE / ES / IT) |
+| Language | UI language — FR · EN · DE · ES · IT |
 
 > **Tip:** Skills fire in the order listed. Use ▲▼ arrows to reorder. You can rename each skill freely.
 
@@ -127,9 +129,8 @@ Open with the **⚙** icon in the overlay.
 
 ```
 DiabloIV-Macro-ByDoktor/
-├── ww_barb_macro.py       # Main application
+├── ww_barb.py             # Main application
 ├── i18n.py                # Internationalisation module
-├── ww_barb_config.json    # Saved configuration (auto-generated)
 ├── launch.bat             # Windows launcher
 └── locales/
     ├── fr.json            # Français
@@ -137,6 +138,9 @@ DiabloIV-Macro-ByDoktor/
     ├── de.json            # Deutsch
     ├── es.json            # Español
     └── it.json            # Italiano
+
+# Config saved separately (not in repo):
+%APPDATA%\DoktorP3st\config.json
 ```
 
 ---
@@ -146,7 +150,7 @@ DiabloIV-Macro-ByDoktor/
 1. Copy `locales/en.json` → `locales/pt.json`
 2. Translate all values (keep the keys in English)
 3. Add `"pt": "Português"` to the `LANGUAGES` dict in `i18n.py`
-4. Restart — it appears automatically in the settings dropdown
+4. Restart — it appears automatically in the settings
 
 ---
 

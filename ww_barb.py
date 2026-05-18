@@ -41,7 +41,9 @@ def xbox_colors(label, active):
     return (on, "#ffffff") if active else (off, "#666677")
 
 # ── CONFIG ────────────────────────────────────────────────────────────────────
-CONFIG_FILE = os.path.join(os.path.dirname(__file__), "ww_barb_config.json")
+CONFIG_DIR  = os.path.join(os.environ.get("APPDATA", os.path.expanduser("~")), "DoktorP3st")
+CONFIG_FILE = os.path.join(CONFIG_DIR, "config.json")
+os.makedirs(CONFIG_DIR, exist_ok=True)
 
 DEFAULT_CONFIG = {
     "lang":             "fr",
@@ -285,19 +287,17 @@ class Settings:
                  font=("Courier",12,"bold"), fg="#e94560", bg="#0c0c14"
                  ).pack(pady=(12,4))
 
-        # Sélecteur de langue
+        # Sélecteur de langue — radio buttons (code direct, pas de pb d'encodage)
         lang_row = tk.Frame(self.win, bg="#13131f", pady=5)
         lang_row.pack(fill="x", padx=12, pady=(0,6))
         self._lbl(lang_row, i18n.t("settings.lang_label")).pack(side="left", padx=8)
-        self._lang_map = {v: k for k, v in i18n.LANGUAGES.items()}
-        self.lang_var  = tk.StringVar(value=i18n.LANGUAGES.get(i18n.current(), "Français"))
-        om = tk.OptionMenu(lang_row, self.lang_var, *self._lang_map.keys())
-        om.config(bg="#1a1a2e", fg="#cccccc", font=("Courier",9),
-                  activebackground="#2a2a4e", activeforeground="#ffffff",
-                  relief="flat", highlightthickness=0, bd=0)
-        om["menu"].config(bg="#1a1a2e", fg="#cccccc", font=("Courier",9),
-                          activebackground="#2a2a4e", activeforeground="#ffffff")
-        om.pack(side="left", padx=4)
+        self.lang_var = tk.StringVar(value=i18n.current())
+        for code, name in i18n.LANGUAGES.items():
+            tk.Radiobutton(lang_row, text=name, variable=self.lang_var, value=code,
+                           font=("Courier",9), fg="#cccccc", bg="#13131f",
+                           activebackground="#13131f", activeforeground="#ffffff",
+                           selectcolor="#1a1a2e", relief="flat"
+                           ).pack(side="left", padx=(0,8))
 
         # Réglages globaux
         top = tk.Frame(self.win, bg="#13131f", pady=6)
@@ -458,10 +458,9 @@ class Settings:
 
     def _save(self):
         try:
-            lang_code = self._lang_map.get(self.lang_var.get(), i18n.current())
-            if lang_code != i18n.current():
-                self.cfg["lang"] = lang_code
-                i18n.load(lang_code)
+            lang_code = self.lang_var.get()   # code direct : "fr", "en", etc.
+            self.cfg["lang"] = lang_code
+            i18n.load(lang_code)
 
             self.cfg["toggle_key"] = self.tv.get().strip()
             self.cfg["press_duration_ms"] = int(self.dv.get())

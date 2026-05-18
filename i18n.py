@@ -27,18 +27,19 @@ def load(code: str) -> None:
         _data = json.load(f)
     _lang = code
 
-def t(key: str, **kw) -> str:
+def t(path: str, **kw) -> str:
     """Accès par chemin pointé.
     Exemples : t('overlay.status_off')
                t('overlay.footer_active', m=3, s=45)
+               t('overlay.footer_idle', key='F1')
     """
     node = _data
-    for part in key.split("."):
+    for part in path.split("."):
         if not isinstance(node, dict):
-            return key
-        node = node.get(part, key)
+            return path
+        node = node.get(part, path)
     if isinstance(node, dict):
-        return key
+        return path
     s = str(node)
     return s.format(**kw) if kw else s
 
