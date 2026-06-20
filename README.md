@@ -156,7 +156,7 @@ The author is not responsible for any account action resulting from its use.
 ## 👤 Author
 
 Made by **DoktorP3st**  
-🎮 Twitch: [twitch.tv/paglorieux](https://www.twitch.tv/paglorieux)
+🎮 Twitch: [twitch.tv/DoktorP3st](https://twitch.tv/DoktorP3st)
 
 ---
 
